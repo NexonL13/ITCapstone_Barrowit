@@ -3,7 +3,8 @@ import { Formik, Form} from "formik";
 import * as Yup from "yup";
 import FormikControl from "../components/Formik/FormikControl";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import sideWallpaper from "../assets/admin_wp.svg"
 
 const Register = () => {
   const navigate = useNavigate()
@@ -35,10 +36,13 @@ const Register = () => {
       validateOnChange={false}
     >
       {(formik) => (
-        <Form className="flex items-center justify-center h-screen">
-          <div className="p-20 bg-gray-100">
+        <Form className="flex h-screen bg-slate-100">
+          <div className="content-end container p-20 w-2/4 me-auto bg-gradient-to-r from-teal-200 to-white">
+            <img src={sideWallpaper} alt="side wallpaper" />
+          </div>
+          <div className="content-end container p-20 w-2/4 ms-auto bg-white">
             <div className="flex flex-col">
-                <h1 className="text-3xl font-semibold text-teal-500">Register</h1>
+                <h1 className="text-6xl font-semibold text-teal-500 py-5">Register</h1>
                 <p className="pb-4 text-sm text-gray-500">BarrowIT Admin</p>
             </div>
             <div>
@@ -72,6 +76,7 @@ const Register = () => {
               />
             </div>
             <button type="submit" className="flex items-center w-full py-4 mx-auto mt-4 btn">Submit</button>
+            <p className='mt-4'>Already have an account? <span className="text-teal-500"><Link to="/">Login here</Link></span></p>
           </div>
         </Form>
       )}

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import FormikControl from "../components/Formik/FormikControl";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
-
+import sideWallpaper from "../assets/admin_wp.svg"
 const Login = () => {
   const navigate = useNavigate()
   const [incorrect, setIncorrect] = useState(false)
@@ -35,10 +35,13 @@ const Login = () => {
       validateOnChange={false}
     >
       {(formik) => (
-        <Form className="flex items-center justify-center h-screen">
-          <div className="p-20 bg-gray-100">
-            <div className="flex flex-col">
-                <h1 className="text-3xl font-semibold text-teal-500">Login</h1>
+        <Form className="flex h-screen bg-slate-100">
+          <div className="content-end container p-20 w-2/4 me-auto bg-gradient-to-r from-teal-200 to-white">
+            <img src={sideWallpaper} alt="side wallpaper" />
+          </div>
+          <div className="content-end container p-20 w-2/4 ms-auto bg-white">
+            <div className="flex flex-col items-center">
+                <h1 className="text-6xl font-semibold text-teal-500 py-5">Login</h1>
                 <p className="pb-4 text-sm text-gray-500">BarrowIT Admin</p>
                 {incorrect && <p className='text-sm text-red-600 text-semibold'>Incorrect account credentials</p>}
             </div>
