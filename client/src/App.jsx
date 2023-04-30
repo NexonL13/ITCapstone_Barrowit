@@ -16,6 +16,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index element={<DashboardContent/>}/>
+            <Route path="default" element={<DashboardContent/>}/>
             <Route path="equipment" element={<Home />} />
             <Route path="add" element={<FormikContainer />} />
           </Route>

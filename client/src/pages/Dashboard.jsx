@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 import { GoPackage } from "react-icons/go";
 
@@ -22,16 +22,16 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <a>
+              <Link to="default">
                 <MdDashboard />
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
-              <a>
+              <Link to="equipment">
                 <GoPackage />
                 Equipment
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
