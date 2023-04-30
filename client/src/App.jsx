@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import FormikContainer from "./components/Formik/FormikContainer"
 import DashboardContent from "./components/DashboardContent";
+import Calendar from "./pages/Calendar";
+import Approval from "./pages/Approval";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="default" element={<DashboardContent/>}/>
             <Route path="equipment" element={<Home />} />
             <Route path="add" element={<FormikContainer />} />
+            <Route path="calendar" element={<Calendar />} />
+            <Route path="approve" element={<Approval />} />
           </Route>
         </Routes>
       </BrowserRouter>

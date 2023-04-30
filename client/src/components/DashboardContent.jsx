@@ -19,7 +19,7 @@ const DashboardContent = () => {
     <div className="flex flex-col h-screen">
       <div
         id="dash-content"
-        class="grid grid-cols-4"
+        className="grid grid-cols-4"
       >
         <div className="w-full lg:w-full">
           <div className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-2 m-2 md:mx-10 md:my-6">

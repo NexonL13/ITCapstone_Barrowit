@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { Link, Outlet } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 import { GoPackage } from "react-icons/go";
+import { AiTwotoneCalendar } from "react-icons/ai"
 
 const Dashboard = () => {
   return (
@@ -31,6 +32,18 @@ const Dashboard = () => {
               <Link to="equipment">
                 <GoPackage />
                 Equipment
+              </Link>
+            </li>
+            <li>
+              <Link to="calendar">
+                <AiTwotoneCalendar />
+                Schedules
+              </Link>
+            </li>
+            <li>
+              <Link to="approve">
+                <AiTwotoneCalendar />
+                Approval
               </Link>
             </li>
           </ul>

@@ -58,7 +58,7 @@ const GraphContent = () => {
   ];
   return (
     <>
-    <div id="main-content" class="flex w-full align-middle justify-center">
+    <div id="main-content" className="flex w-full align-middle justify-center">
             {/* <!--"Container" for the graphs"--> */}
               {/* <!--Graph Card--> */}
              
