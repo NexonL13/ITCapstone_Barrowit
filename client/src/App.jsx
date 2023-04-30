@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import FormikContainer from "./components/Formik/FormikContainer"
+import DashboardContent from "./components/DashboardContent";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />}>
-            <Route index element={<Home />} />
+            <Route index element={<DashboardContent/>}/>
+            <Route path="equipment" element={<Home />} />
             <Route path="add" element={<FormikContainer />} />
           </Route>
         </Routes>

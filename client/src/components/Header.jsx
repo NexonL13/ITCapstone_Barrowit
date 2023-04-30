@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom"
+import { CiMenuBurger} from "react-icons/ci"
 
 const Header = () => {
   return (
     <>
       <div className="navbar bg-gray-100">
         <div className="flex-1">
+        <label htmlFor="my-drawer" className="btn bg-white border-none drawer-button text-gray-900 text-lg hover:bg-grey-600 hover:text-white"><CiMenuBurger/></label>
           <a className="btn btn-ghost normal-case text-xl">BarrowIT</a>
         </div>
         <div className="flex-none gap-2">
@@ -35,7 +38,7 @@ const Header = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <Link to="/">Logout</Link>
               </li>
             </ul>
           </div>
