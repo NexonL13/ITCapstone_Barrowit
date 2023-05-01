@@ -10,6 +10,9 @@ router.get('/', equipmentController.getEquipment)
 //POST
 router.post('/', equipmentController.upload, equipmentController.addEquipment)
 
+//UPDATE
+router.put('/:equipmentId', equipmentController.updateEquipment)
+
 //DELETE
 router.delete('/:equipmentId', equipmentController.deleteEquipment)
 

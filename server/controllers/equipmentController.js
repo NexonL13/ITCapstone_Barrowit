@@ -20,7 +20,22 @@ const addEquipment = async (req, res) => {
     res.json(equipment)
 }
 
-const deleteEquipment = async (req,res) => {
+const updateEquipment = async (req,res) => {
+    const equipmentId = req.params.equipmentId
+    const equipment = {
+        image: req.file.filename,
+        name: req.body.name,
+        description: req.body.description,
+        stock: req.body.stock,
+        category: req.body.category,
+        status: req.body.status
+    }
+    await Equipment.update(equipment, {where: {id:equipmentId}}).then(() => {
+        console.log("Updated")
+    })
+}
+
+const deleteEquipment = (req,res) => {
     const equipmentId = req.params.equipmentId
 
     Equipment.destroy({
@@ -58,6 +73,7 @@ const upload = multer({
 module.exports = {
     getEquipment, 
     addEquipment,
+    updateEquipment,
     deleteEquipment,
     upload
 }

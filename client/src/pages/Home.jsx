@@ -5,21 +5,23 @@ import { TbPackageOff } from 'react-icons/tb'
 import { MdAddCircleOutline } from 'react-icons/md'
 
 const Home = () => {
+  const [isClick, setIsClick] = useState(false)
   const [listOfEquipment, setListOfEquipment] = useState([]);
   const url_path = "http://localhost:5173/images/"
   const navigate = useNavigate()
 
+  const fetchAllEquipment = async () => {
+    const { data } = await axios.get("http://localhost:3000/equipment");
+    setListOfEquipment(data);
+  };
+
   useEffect(() => {
-    const fetchAllEquipment = async () => {
-      const { data } = await axios.get("http://localhost:3000/equipment");
-      setListOfEquipment(data);
-    };
     fetchAllEquipment();
-  }, []);
+  }, [isClick]);
 
   const deleteEquipment = async(id) => {
-      await axios.delete(`http://localhost:3000/equipment/${id}`).then((res) => {
-        console.log("Deleted")
+      await axios.delete(`http://localhost:3000/equipment/${id}`).then(() => {
+        setIsClick(prev => !prev)
       })
   }
 
@@ -87,20 +89,20 @@ const Home = () => {
                 <th>
                   <a href="#my-modal-2" className="btn btn-ghost bg-red-500 btn-xs">Delete</a>
                   <div className="modal" id="my-modal-2">
-  <div className="modal-box">
-    <h1 className="font-semibold text-md">{`You want to delete ${item.name}?`}</h1>
-    <h1 className="font-bold text-2xl text-teal-500">{`${item.name}`}</h1>
-    <div className="flex items-center space-x-10 pt-2">
-    <p className="">{`Quantity: ${item.stock}`}</p>
-    <p className="">{`Category: ${item.stock}`}</p>
-    </div>
-    <p className="py-4 text-sm">{item.description}</p>
-    <div className="modal-action">
-    <a href="#" className="btn" onClick={() => deleteEquipment(item.id)}>Confirm</a>
-     <a href="#" className="btn">Close</a>
-    </div>
-  </div>
-</div>
+                  <div className="modal-box">
+                    <h1 className="font-semibold text-md">{`You want to delete ${item.name}?`}</h1>
+                    <h1 className="font-bold text-2xl text-teal-500">{`${item.name}`}</h1>
+                    <div className="flex items-center space-x-10 pt-2">
+                    <p className="">{`Quantity: ${item.stock}`}</p>
+                    <p className="">{`Category: ${item.stock}`}</p>
+                    </div>
+                    <p className="py-4 text-sm">{item.description}</p>
+                    <div className="modal-action">
+                    <a href="#" className="btn" onClick={() => deleteEquipment(item.id)}>Confirm</a>
+                    <a href="#" className="btn">Close</a>
+                    </div>
+                  </div>
+                </div>
                 </th>
               </tr>
           </tbody>
