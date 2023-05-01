@@ -20,6 +20,17 @@ const addEquipment = async (req, res) => {
     res.json(equipment)
 }
 
+const deleteEquipment = async (req,res) => {
+    const equipmentId = req.params.equipmentId
+
+    Equipment.destroy({
+        where: {
+            id: equipmentId,
+        }
+    })
+    res.json("Deleted")
+}
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, '../client/public/images')
@@ -47,5 +58,6 @@ const upload = multer({
 module.exports = {
     getEquipment, 
     addEquipment,
+    deleteEquipment,
     upload
 }

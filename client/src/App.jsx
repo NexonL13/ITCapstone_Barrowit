@@ -18,11 +18,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="dashboard" element={<Dashboard />}>
             <Route index element={<DashboardContent/>}/>
             <Route path="default" element={<DashboardContent/>}/>
-            <Route path="equipment" element={<Home />} />
             <Route path="add" element={<FormikContainer />} />
+            <Route path="equipment" element={<Home />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="approve" element={<Approval />} />
             <Route path="users" element={<Users />} />

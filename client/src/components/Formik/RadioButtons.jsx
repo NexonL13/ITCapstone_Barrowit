@@ -4,6 +4,7 @@ import TextError from "./TextError";
 
 const RadioButtons = (props) => {
   const { label, name, options, ...rest } = props;
+
   return (
     <>
       <label htmlFor={name} className="block">{label}</label>

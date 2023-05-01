@@ -46,7 +46,7 @@ const FormikContainer = () => {
       formData.append(value, values[value]);
     }
     await axios.post("http://localhost:3000/equipment", formData);
-    navigate("/dashboard");
+    navigate("/dashboard/equipment");
   };
 
   return (
@@ -62,7 +62,7 @@ const FormikContainer = () => {
           <div className="p-20 my-32 max-w-3xl mx-auto space-y-2 bg-gray-100">
           <div className="flex space-x-72">
             <h1 className="text-3xl font-semibold">Add the equipment</h1>
-            <button type="button" onClick={() => navigate('/')}><IoIosArrowBack className="text-3xl"/></button>
+            <button type="button" onClick={() => navigate('/dashboard/equipment')}><IoIosArrowBack className="text-3xl"/></button>
           </div>
           <div>
           <label className="block">Image Upload</label>

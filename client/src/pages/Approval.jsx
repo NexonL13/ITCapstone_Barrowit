@@ -20,8 +20,8 @@ const Approval = () => {
         <td>Cy Ganderton</td>
         <td>Purpose 1</td>
         <td className='flex space-x-5'>
-            <button className='btn bg-green-500 border-none'>Approve</button>
-            <button className='btn bg-red-500 border-none'>Reject</button>
+            <button className='btn bg-green-500 border-none btn-xs'>Approve</button>
+            <button className='btn bg-red-500 border-none btn-xs'>Reject</button>
         </td>
       </tr>
       {/* row 2 */}
@@ -30,8 +30,8 @@ const Approval = () => {
         <td>Hart Hagerty</td>
         <td>Purpose 2</td>
         <td className='flex space-x-5'>
-            <button className='btn bg-green-500 border-none'>Approve</button>
-            <button className='btn bg-red-500 border-none'>Reject</button>
+            <button className='btn bg-green-500 border-none btn-xs'>Approve</button>
+            <button className='btn bg-red-500 border-none btn-xs'>Reject</button>
         </td>
       </tr>
       {/* row 3 */}
@@ -40,8 +40,8 @@ const Approval = () => {
         <td>Brice Swyre</td>
         <td>Purpose 3</td>
         <td className='flex space-x-5'>
-            <button className='btn bg-green-500 border-none'>Approve</button>
-            <button className='btn bg-red-500 border-none'>Reject</button>
+            <button className='btn bg-green-500 border-none btn-xs'>Approve</button>
+            <button className='btn bg-red-500 border-none btn-xs'>Reject</button>
         </td>
       </tr>
     </tbody>

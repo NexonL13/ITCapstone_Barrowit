@@ -17,6 +17,11 @@ const Home = () => {
     fetchAllEquipment();
   }, []);
 
+  const deleteEquipment = async(id) => {
+      await axios.delete(`http://localhost:3000/equipment/${id}`).then((res) => {
+        console.log("Deleted")
+      })
+  }
 
   return (
     <>
@@ -33,7 +38,7 @@ const Home = () => {
               <th>Equipment Name</th>
               <th>Description</th>
               <th>Stocks</th>
-              <th className="flex justify-center align-middle"><button className="text-3xl" onClick={()=> navigate('add')}><MdAddCircleOutline className="text-3xl"/></button></th>
+              <th className="flex justify-center align-middle"><button className="text-3xl" onClick={()=> navigate('/dashboard/add')}><MdAddCircleOutline className="text-3xl"/></button></th>
             </tr>
           </thead>
           {listOfEquipment.map((item) => (
@@ -80,7 +85,22 @@ const Home = () => {
                 </td>
                 <td>{item.stock}</td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  <a href="#my-modal-2" className="btn btn-ghost bg-red-500 btn-xs">Delete</a>
+                  <div className="modal" id="my-modal-2">
+  <div className="modal-box">
+    <h1 className="font-semibold text-md">{`You want to delete ${item.name}?`}</h1>
+    <h1 className="font-bold text-2xl text-teal-500">{`${item.name}`}</h1>
+    <div className="flex items-center space-x-10 pt-2">
+    <p className="">{`Quantity: ${item.stock}`}</p>
+    <p className="">{`Category: ${item.stock}`}</p>
+    </div>
+    <p className="py-4 text-sm">{item.description}</p>
+    <div className="modal-action">
+    <a href="#" className="btn" onClick={() => deleteEquipment(item.id)}>Confirm</a>
+     <a href="#" className="btn">Close</a>
+    </div>
+  </div>
+</div>
                 </th>
               </tr>
           </tbody>
